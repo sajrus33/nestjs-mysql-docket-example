@@ -27,6 +27,7 @@ services:
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_ROOT_HOST: 'host.docker.internal'
     ports:
       - '3306:3306'
 networks:
