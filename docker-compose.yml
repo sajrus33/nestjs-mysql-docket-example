@@ -1,17 +1,3 @@
-#version: '3.8'
-#services:
-#  db:
-#    container_name: nestjs-sample-db
-#    image: mysql:8.0
-#    tty: true
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: "localmysql"
-#      MYSQL_ROOT_PASSWORD: "DE-k&ySJ6a5BrY9G"
-#      MYSQL_PASSWORD: "DE-k&ySJ6a5BrY9G"
-#    ports:
-#      - '3306:3306'
-
 version: '3.7'
 
 services:
@@ -37,10 +23,10 @@ services:
     networks:
       - webnet
     environment:
-      MYSQL_USER: "test"
-      MYSQL_DATABASE: "localmysql"
-      MYSQL_ROOT_PASSWORD: "DE-k&ySJ6a5BrY9G"
-      MYSQL_PASSWORD: "DE-k&ySJ6a5BrY9G"
+      MYSQL_USER: "${MYSQL_USERNAME}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
     ports:
       - '3306:3306'
 networks:
