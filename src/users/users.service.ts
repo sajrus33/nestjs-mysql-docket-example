@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Users } from '../entities/users.entity';
+import { Users } from './users.entity';
 
 @Injectable()
 export class UsersService {
@@ -10,7 +10,7 @@ export class UsersService {
     private usersRepository: Repository<Users>,
   ) {}
 
-  getUsers(id: number): Promise<Users[] | Users> {
+  getUsers(id?: number): Promise<Users[] | Users> {
     if (id) {
       return this.usersRepository.findOneOrFail(id);
     }

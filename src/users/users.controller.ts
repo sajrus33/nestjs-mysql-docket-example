@@ -7,8 +7,8 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { Users } from '../entities/users.entity';
-import { UsersService } from '../services/users.service';
+import { Users } from './users.entity';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
